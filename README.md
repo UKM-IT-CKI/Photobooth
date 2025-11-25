@@ -6,7 +6,7 @@
 ![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**UKM IT Fun Photobooth** adalah aplikasi web interaktif yang memungkinkan pengguna untuk mengambil foto strip bergaya *photobox* secara langsung dari browser. Dibuat menggunakan **Flask**, **Pillow (PIL)**, dan **Vanilla JS**.
+**UKM IT Photobooth** adalah aplikasi web interaktif yang memungkinkan pengguna untuk mengambil foto strip bergaya *photobox* secara langsung dari browser. Dibuat menggunakan **Flask**, **Pillow (PIL)**, dan **Vanilla JS**.
 
 Proyek ini dirancang untuk **UKM IT Cipta Karya Informatika** dengan antarmuka bertema *Cyberpunk / Pop Art*.
 
@@ -47,3 +47,9 @@ Project_Photobooth/
 │       └── script.js     # Logika kamera, timer, dan fetch API
 └── templates/
     └── index.html        # Halaman utama
+
+
+🤝 Kontribusi & Credits
+Dibuat dengan ❤️ untuk UKM IT Cipta Karya Informatika.
+
+Developer & Designer: [Ricky & Kholiq & Nafis]
