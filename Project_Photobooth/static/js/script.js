@@ -84,6 +84,9 @@ captureBtn.addEventListener('click', async () => {
     captureBtn.disabled = true;
     captureBtn.innerText = "SEDANG MENGAMBIL...";
 
+    // Matikan tombol Frame saat mulai foto
+    document.querySelectorAll('#themeOptions .option-btn').forEach(btn => btn.disabled = true);
+
     let photos = [];
 
     for (let i = 1; i <= 4; i++) {
@@ -158,6 +161,9 @@ captureBtn.addEventListener('click', async () => {
         isCapturing = false;
         captureBtn.disabled = false;
         captureBtn.innerText = "📸 MULAI FOTO";
+
+        // Enable kembali theme options
+        document.querySelectorAll('#themeOptions .option-btn').forEach(btn => btn.disabled = false);
     }
 });
 
