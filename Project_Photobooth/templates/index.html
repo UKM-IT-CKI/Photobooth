@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Photobooth</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Eksternal (Menggunakan Jinja2 url_for agar path-nya benar di Flask) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>✨ PHOTOBOOTH ✨</h1>
+
+        <style>
+            .ukmit-logo {
+                position: absolute;
+                left: 18px;
+                top: 22px;
+                width: 56px;
+                height: 56px;
+                z-index: 50;
+                pointer-events: none;
+            }
+
+            .ukmit-logo img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+
+            /* Sesuaikan posisi untuk layar kecil */
+            @media (max-width: 600px) {
+                .ukmit-logo {
+                    left: 12px;
+                    top: 14px;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        </style>
+        <!-- Area Kamera -->
+        <div class="camera-section">
+            <video id="video" autoplay playsinline muted></video>
+            <img id="singleFrameOverlay" class="frame-overlay" src="/static/frames/frame_single_1.png"
+                alt="Frame Overlay">
+            <div id="flash" class="flash"></div>
+            <div id="countdown" class="countdown-overlay">3</div>
+        </div>
+
+        <!-- Area Kontrol -->
+        <div class="controls-section">
+
+            <div class="control-group">
+                <label>Pilih Tema</label>
+                <div class="options-grid" id="themeOptions">
+                    <button class="option-btn active" data-value="1">Frame 1</button>
+                    <button class="option-btn" data-value="2">Frame 2</button>
+                    <button class="option-btn" data-value="3">Frame 3</button>
+                    <button class="option-btn" data-value="4">Frame 4</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Filter Warna</label>
+                <div class="options-grid" id="filterOptions">
+                    <button class="option-btn active" data-value="none">Normal</button>
+                    <button class="option-btn" data-value="grayscale(100%)">BW</button>
+                    <button class="option-btn" data-value="sepia(60%)">Sepia</button>
+                    <button class="option-btn" data-value="brightness(1.2) contrast(1.1)">Bright</button>
+                </div>
+            </div>
+
+            <button id="captureBtn">📸 MULAI FOTO</button>
+        </div>
+    </div>
+
+    <!-- Modal Hasil -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color: var(--accent); font-family: 'Bangers'; letter-spacing: 1px;">HASIL KEREN!</h2>
+            <img id="resultImage" class="result-img" src="" alt="Result">
+
+            <div class="modal-buttons">
+                <a id="downloadLink" href="#" download class="btn-secondary">Download ⬇️</a>
+                <button id="retakeBtn" class="btn-outline">Foto Lagi 🔄</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Eksternal -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
