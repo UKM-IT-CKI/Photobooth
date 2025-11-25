@@ -52,5 +52,3 @@ Project_Photobooth/
 
 🤝 Kontribusi & Credits
 Dibuat dengan ❤️ untuk UKM IT Cipta Karya Informatika.
-
-Developer & Designer: [Ricky & Kholiq & Nafis]
