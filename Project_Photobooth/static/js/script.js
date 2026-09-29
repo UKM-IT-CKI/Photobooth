@@ -34,20 +34,28 @@ initCamera();
 
 // 2. Event Listener Tema
 document.querySelectorAll('#themeOptions .option-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        document.querySelectorAll('#themeOptions .option-btn').forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        currentTheme = e.target.dataset.value;
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('#themeOptions .option-btn').forEach(option => {
+            option.classList.remove('active');
+            option.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        currentTheme = btn.dataset.value;
         singleFrameOverlay.src = `/static/frames/frame_single_${currentTheme}.png`;
     });
 });
 
 // 3. Event Listener Filter
 document.querySelectorAll('#filterOptions .option-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        document.querySelectorAll('#filterOptions .option-btn').forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        currentFilter = e.target.dataset.value;
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('#filterOptions .option-btn').forEach(option => {
+            option.classList.remove('active');
+            option.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        currentFilter = btn.dataset.value;
         video.style.filter = currentFilter;
     });
 });

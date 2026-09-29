@@ -61,39 +61,77 @@
 
             <div class="control-group">
                 <label>Pilih Tema</label>
-                <div class="options-grid" id="themeOptions">
-                    <button class="option-btn active" data-value="1">Frame 1</button>
-                    <button class="option-btn" data-value="2">Frame 2</button>
-                    <button class="option-btn" data-value="3">Frame 3</button>
-                    <button class="option-btn" data-value="4">Frame 4</button>
-                    <button class="option-btn" data-value="5">Frame 5</button>
-                    <button class="option-btn" data-value="6">Frame 6</button>
+                <div class="options-grid theme-options" id="themeOptions">
+                    <button class="option-btn theme-option active" data-value="1" aria-pressed="true" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_1.png') }}" alt="" loading="lazy">
+                        <span>Comic</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="2" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_2.png') }}" alt="" loading="lazy">
+                        <span>Alien</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="3" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_3.png') }}" alt="" loading="lazy">
+                        <span>Astronaut</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="4" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_4.png') }}" alt="" loading="lazy">
+                        <span>Hacker</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="5" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_5.png') }}" alt="" loading="lazy">
+                        <span>Floral</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="6" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_6.png') }}" alt="" loading="lazy">
+                        <span>Bunny</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="7" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_7.png') }}" alt="" loading="lazy">
+                        <span>Racing</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="8" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_8.png') }}" alt="" loading="lazy">
+                        <span>Galaxy</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="9" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_9.png') }}" alt="" loading="lazy">
+                        <span>Football</span>
+                    </button>
+                    <button class="option-btn theme-option" data-value="10" aria-pressed="false" type="button">
+                        <img src="{{ url_for('static', filename='frames/frame_single_10.png') }}" alt="" loading="lazy">
+                        <span>Arcade</span>
+                    </button>
                 </div>
             </div>
 
             <div class="control-group">
                 <label>Filter Warna</label>
                 <div class="options-grid" id="filterOptions">
-                    <button class="option-btn active" data-value="none">Normal</button>
-                    <button class="option-btn" data-value="grayscale(100%)">BW</button>
-                    <button class="option-btn" data-value="sepia(60%)">Sepia</button>
-                    <button class="option-btn" data-value="brightness(1.2) contrast(1.1)">Bright</button>
+                    <button class="option-btn active" data-value="none" aria-pressed="true" type="button">Normal</button>
+                    <button class="option-btn" data-value="grayscale(100%)" aria-pressed="false" type="button">BW</button>
+                    <button class="option-btn" data-value="sepia(60%)" aria-pressed="false" type="button">Sepia</button>
+                    <button class="option-btn" data-value="brightness(1.2) contrast(1.1)" aria-pressed="false" type="button">Bright</button>
+                    <button class="option-btn" data-value="sepia(20%) saturate(1.2) brightness(1.05)" aria-pressed="false" type="button">Warm</button>
+                    <button class="option-btn" data-value="brightness(1.08) contrast(0.9) saturate(1.1)" aria-pressed="false" type="button">Soft</button>
+                    <button class="option-btn" data-value="saturate(1.6) contrast(1.1)" aria-pressed="false" type="button">Vivid</button>
+                    <button class="option-btn" data-value="contrast(1.25) saturate(0.9)" aria-pressed="false" type="button">Contrast</button>
                 </div>
             </div>
 
-            <button id="captureBtn">📸 MULAI FOTO</button>
+            <button id="captureBtn">MULAI FOTO</button>
         </div>
     </div>
 
     <!-- Modal Hasil -->
     <div id="resultModal" class="modal">
         <div class="modal-content">
-            <h2 style="color: var(--accent); font-family: 'Bangers'; letter-spacing: 1px;">HASIL KEREN!</h2>
+            <h2 style="color: var(--accent); font-family: 'Bangers'; letter-spacing: 1px;">FOTO SELESAI!</h2>
             <img id="resultImage" class="result-img" src="" alt="Result">
 
             <div class="modal-buttons">
-                <a id="downloadLink" href="#" download class="btn-secondary">Download ⬇️</a>
-                <button id="retakeBtn" class="btn-outline">Foto Lagi 🔄</button>
+                <a id="downloadLink" href="#" download class="btn-secondary">Download Foto</a>
+                <button id="retakeBtn" class="btn-outline">Ulang Sesi</button>
             </div>
         </div>
     </div>
