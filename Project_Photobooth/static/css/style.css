@@ -128,6 +128,16 @@ video {
     gap: 8px;
 }
 
+.theme-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    max-height: 390px;
+    overflow-y: auto;
+    padding: 2px 4px 2px 2px;
+    scrollbar-color: var(--secondary) #252525;
+    scrollbar-width: thin;
+}
+
 .option-btn {
     background: #333;
     border: 2px solid #555;
@@ -243,4 +253,31 @@ video {
     }   
     
     h1 { font-size: 2.5rem; }
+}
+
+.theme-option {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    overflow: hidden;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.theme-option img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #171717;
+    border-radius: 4px;
+}
+
+.theme-option span {
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
