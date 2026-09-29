@@ -13,7 +13,7 @@ Proyek ini dirancang untuk **UKM IT Cipta Karya Informatika** dengan antarmuka b
 
 ---
 
-## 📸 Fitur Utama
+## Fitur Utama
 
 * **Real-time Camera Access**: Menggunakan API browser (`navigator.mediaDevices`) untuk akses webcam yang lancar.
 * **4-Shot Sequence**: Mengambil 4 foto berturut-turut dengan hitung mundur otomatis.
@@ -22,7 +22,7 @@ Proyek ini dirancang untuk **UKM IT Cipta Karya Informatika** dengan antarmuka b
 * **Server-Side Processing**: Penggabungan gambar (Grid 2x2) dilakukan di server menggunakan Python Pillow.
 * **Privacy Focused**: Tidak ada penyimpanan file di server. Gambar diproses dalam memori dan dikembalikan sebagai string **Base64** untuk diunduh langsung.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Komponen | Teknologi | Deskripsi |
 | :--- | :--- | :--- |
